@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://kewdcobx72li"]
+
+[ext_resource type="Texture2D" uid="uid://krmoan0jxpcj" path="res://Images/Grass1.png" id="1_1blqh"]
+[ext_resource type="Script" path="res://Scripts/grass.gd" id="1_bw11g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_374d7"]
+size = Vector2(10, 15)
+
+[node name="Grass" type="Area2D"]
+script = ExtResource("1_bw11g")
+
+[node name="Plant" type="Sprite2D" parent="."]
+modulate = Color(0.294118, 0.643137, 0.282353, 1)
+position = Vector2(0, -19)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("1_1blqh")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2.5)
+shape = SubResource("RectangleShape2D_374d7")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

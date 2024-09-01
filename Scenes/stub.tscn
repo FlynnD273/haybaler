@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyp47e3xr00fv"]
+
+[ext_resource type="Texture2D" uid="uid://rsj1ld8rlwta" path="res://Images/Stub.png" id="2_fecmo"]
+
+[node name="Stub" type="Node2D"]
+
+[node name="Plant" type="Sprite2D" parent="."]
+modulate = Color(0.294118, 0.643137, 0.282353, 1)
+position = Vector2(0, -19)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("2_fecmo")
