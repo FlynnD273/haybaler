@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgw1irqt1kqt3"]
+
+[ext_resource type="Texture2D" uid="uid://dqimmfurbn7bj" path="res://Images/Bale.png" id="1_awh6g"]
+[ext_resource type="Script" path="res://Scripts/movable_bale.gd" id="1_kywhg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sx5nw"]
+radius = 23.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cinay"]
+radius = 38.03
+
+[node name="MovableBale" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_kywhg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_awh6g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_sx5nw")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_cinay")

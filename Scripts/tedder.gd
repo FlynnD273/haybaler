@@ -40,5 +40,8 @@ func end_ted() -> void:
   set_hitbox_disabled(true)
 
 func _on_farm_state_changed() -> void:
-  if manager.state == GameManager.GameStates.Ted:
-    show()
+  match manager.state:
+    GameManager.GameStates.Ted:
+      show()
+    _:
+      hide()

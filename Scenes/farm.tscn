@@ -1,35 +1,56 @@
-[gd_scene load_steps=24 format=3 uid="uid://ga0felxro5nn"]
+[gd_scene load_steps=35 format=3 uid="uid://ga0felxro5nn"]
 
-[ext_resource type="Texture2D" uid="uid://dyqfyp5o05h2e" path="res://Images/Background/Background 0.png" id="1_3k6a4"]
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_adgtn"]
 [ext_resource type="Script" path="res://Scripts/grass_spawner.gd" id="1_lpnxx"]
+[ext_resource type="Texture2D" uid="uid://datm7ois7npd4" path="res://Images/Background/Background-1.png" id="2_8nlqb"]
 [ext_resource type="Texture2D" uid="uid://krmoan0jxpcj" path="res://Images/Grass1.png" id="2_doaln"]
 [ext_resource type="Script" path="res://Scripts/player_controller.gd" id="2_l4egb"]
-[ext_resource type="Texture2D" uid="uid://drnnfl5eaw18n" path="res://Images/Background/Background 1.png" id="2_nocm6"]
 [ext_resource type="Texture2D" uid="uid://dxhn77slxbja8" path="res://Images/Grass2.png" id="3_gi1g2"]
 [ext_resource type="Texture2D" uid="uid://bvherhausim6y" path="res://Images/Farmer.png" id="3_nhj72"]
-[ext_resource type="Texture2D" uid="uid://xvn6irx3kevn" path="res://Images/Background/Background 2.png" id="3_ocavg"]
+[ext_resource type="Texture2D" uid="uid://b5tq5l83s5nq7" path="res://Images/Background/Background-2.png" id="3_vecwc"]
 [ext_resource type="Script" path="res://Scripts/camera_controller.gd" id="4_6lsh0"]
-[ext_resource type="Texture2D" uid="uid://cxmkx3u5cyl54" path="res://Images/Background/Background 3.png" id="4_cppd6"]
-[ext_resource type="Texture2D" uid="uid://cd1mrbq6nraxv" path="res://Images/Background/Background 4.png" id="5_3pckb"]
+[ext_resource type="Texture2D" uid="uid://bb5y4h8hl76hq" path="res://Images/Background/Background-3.png" id="4_i708d"]
+[ext_resource type="Texture2D" uid="uid://bs274gxoatxb5" path="res://Images/Background/Background-4.png" id="5_24tiu"]
+[ext_resource type="Texture2D" uid="uid://cq6vshek41vi" path="res://Images/Background/Background-5.png" id="6_c8gxr"]
 [ext_resource type="Texture2D" uid="uid://cy0jxep400m54" path="res://Images/Scythe.png" id="6_tqe4t"]
 [ext_resource type="Script" path="res://Scripts/scythe.gd" id="7_2q2f0"]
+[ext_resource type="Script" path="res://Scripts/bales.gd" id="10_ovag6"]
+[ext_resource type="Texture2D" uid="uid://dqimmfurbn7bj" path="res://Images/Bale.png" id="11_iex6k"]
+[ext_resource type="Texture2D" uid="uid://ch6xgmesj5553" path="res://Images/RollingFarmer.png" id="12_7fyv1"]
+[ext_resource type="Script" path="res://Scripts/bale.gd" id="12_bb0dn"]
+[ext_resource type="Script" path="res://Scripts/rolling_farmer.gd" id="13_82vrw"]
 [ext_resource type="Script" path="res://Scripts/tedder.gd" id="14_nnkn1"]
 [ext_resource type="Texture2D" uid="uid://bwqpeceurfd31" path="res://Images/Tedder.png" id="15_c7mv7"]
 [ext_resource type="FontFile" uid="uid://bwgeannpp1ul2" path="res://Kalam-Regular.ttf" id="17_7jdtr"]
 [ext_resource type="Script" path="res://Scripts/instructions.gd" id="18_4nthg"]
+[ext_resource type="Texture2D" uid="uid://c2pw26vnoxvrm" path="res://Images/Barn.png" id="23_l7380"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c7okd"]
-size = Vector2(2000, 100)
+size = Vector2(2718, 100)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nllgw"]
-size = Vector2(24, 21)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7v1s"]
+size = Vector2(200, 500)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pumet"]
+radius = 10.66
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eprqx"]
 size = Vector2(320, 70)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nllgw"]
+size = Vector2(24, 21)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i5qli"]
-size = Vector2(100, 183)
+size = Vector2(100, 800)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psbl8"]
+size = Vector2(100, 800)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_htbsy"]
+radius = 18.16
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wt126"]
+size = Vector2(527, 64)
 
 [sub_resource type="Theme" id="Theme_du7ls"]
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
@@ -45,66 +66,92 @@ scroll_offset = Vector2(679.33, -125.495)
 
 [node name="Background0" type="Sprite2D" parent="Parallax2D"]
 scale = Vector2(0.18, 0.18)
-texture = ExtResource("1_3k6a4")
+texture = ExtResource("2_8nlqb")
 
 [node name="Parallax2D2" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.05, 1)
 scroll_offset = Vector2(0, -154.26)
-repeat_size = Vector2(737.28, 0)
+repeat_size = Vector2(737, 0)
 repeat_times = 3
 
 [node name="Background1" type="Sprite2D" parent="Parallax2D2"]
 scale = Vector2(0.18, 0.18)
-texture = ExtResource("2_nocm6")
+texture = ExtResource("3_vecwc")
 
 [node name="Parallax2D3" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.1, 1)
 scroll_offset = Vector2(0, -154.26)
-repeat_size = Vector2(737.287, 0)
+repeat_size = Vector2(737, 0)
 repeat_times = 3
 
 [node name="Background2" type="Sprite2D" parent="Parallax2D3"]
 modulate = Color(0.830335, 0.830335, 0.830335, 1)
 scale = Vector2(0.18, 0.18)
-texture = ExtResource("3_ocavg")
+texture = ExtResource("4_i708d")
 
 [node name="Parallax2D4" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.15, 1)
 scroll_offset = Vector2(0, -154.26)
-repeat_size = Vector2(737.287, 0)
+repeat_size = Vector2(737, 0)
 repeat_times = 3
 
 [node name="Background3" type="Sprite2D" parent="Parallax2D4"]
 modulate = Color(0.91664, 0.91664, 0.91664, 1)
 scale = Vector2(0.18, 0.18)
-texture = ExtResource("4_cppd6")
+texture = ExtResource("5_24tiu")
 
 [node name="Parallax2D5" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.2, 1)
 scroll_offset = Vector2(0, -154.26)
-repeat_size = Vector2(737.287, 0)
+repeat_size = Vector2(737, 0)
 repeat_times = 3
 
 [node name="Background4" type="Sprite2D" parent="Parallax2D5"]
 modulate = Color(0.912289, 0.912289, 0.912289, 1)
 scale = Vector2(0.18, 0.18)
-texture = ExtResource("5_3pckb")
+texture = ExtResource("6_c8gxr")
 
 [node name="Grasses" type="Node2D" parent="."]
 script = ExtResource("1_lpnxx")
 grasses = Array[Texture2D]([ExtResource("2_doaln"), ExtResource("3_gi1g2")])
 
+[node name="Timer" type="Timer" parent="Grasses"]
+wait_time = 0.5
+one_shot = true
+
+[node name="Barn" type="Sprite2D" parent="."]
+position = Vector2(1546, -145)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("23_l7380")
+
+[node name="ColorRect" type="ColorRect" parent="Barn"]
+offset_left = -364.0
+offset_top = 274.0
+offset_right = -324.0
+offset_bottom = 314.0
+color = Color(0.319053, 0.230642, 0.169919, 1)
+
+[node name="Bales" type="Node2D" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("10_ovag6")
+player = NodePath("../Farmer")
+
+[node name="Timer" type="Timer" parent="Bales"]
+wait_time = 0.1
+one_shot = true
+
 [node name="Ground" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="ColorRect" type="ColorRect" parent="Ground"]
-offset_right = 2000.0
+offset_right = 2721.0
 offset_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.211765, 0.137255, 0.0901961, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-position = Vector2(1000, 50)
+position = Vector2(1359, 50)
 shape = SubResource("RectangleShape2D_c7okd")
 debug_color = Color(0, 0.595, 0.7, 0.0196078)
 
@@ -113,13 +160,34 @@ position = Vector2(19, -34)
 script = ExtResource("2_l4egb")
 SPEED = 200.0
 
+[node name="Bale" type="Node2D" parent="Farmer" node_paths=PackedStringArray("bale_parent")]
+position = Vector2(0, -5)
+scale = Vector2(0.1, 0.1)
+script = ExtResource("12_bb0dn")
+bale_parent = NodePath("../../Bales")
+
+[node name="Sprite2D" type="Sprite2D" parent="Farmer/Bale"]
+texture = ExtResource("11_iex6k")
+
+[node name="Area2D" type="Area2D" parent="Farmer/Bale"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Farmer/Bale/Area2D"]
+shape = SubResource("RectangleShape2D_p7v1s")
+
 [node name="Farmer" type="Sprite2D" parent="Farmer"]
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("3_nhj72")
 
+[node name="RollingFarmer" type="Sprite2D" parent="Farmer"]
+position = Vector2(0, 7.62)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("12_7fyv1")
+offset = Vector2(0, -140)
+script = ExtResource("13_82vrw")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Farmer"]
 position = Vector2(0, 9.5)
-shape = SubResource("RectangleShape2D_nllgw")
+shape = SubResource("CircleShape2D_pumet")
 
 [node name="Tools" type="Node2D" parent="Farmer"]
 
@@ -166,41 +234,67 @@ scale = Vector2(0.1, 0.1)
 position = Vector2(1.52588e-05, 70)
 shape = SubResource("RectangleShape2D_eprqx")
 
+[node name="Area2D" type="Area2D" parent="Farmer"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Farmer/Area2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_nllgw")
+
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 position = Vector2(-214, -360)
 zoom = Vector2(2.25, 2.25)
 script = ExtResource("4_6lsh0")
 target = NodePath("../Farmer")
 speed = 5.0
-max_x = 2000.0
+max_x = 1742.0
 
 [node name="Bounds" type="StaticBody2D" parent="."]
-
-[node name="Right" type="CollisionShape2D" parent="Bounds"]
-position = Vector2(2050, 9)
-shape = SubResource("RectangleShape2D_i5qli")
+collision_layer = 3
+collision_mask = 3
 
 [node name="Left" type="CollisionShape2D" parent="Bounds"]
-position = Vector2(-50, 8.5)
+position = Vector2(-50, -300)
 shape = SubResource("RectangleShape2D_i5qli")
+
+[node name="BarnRight" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(1792, 16)
+shape = SubResource("RectangleShape2D_psbl8")
+
+[node name="BarnThreshold" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(1372, 11)
+shape = SubResource("CircleShape2D_htbsy")
+
+[node name="Barn Roof" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(1616.5, -204)
+shape = SubResource("RectangleShape2D_wt126")
 
 [node name="Parallax2D6" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.5, 1)
 scroll_offset = Vector2(200, -160)
+script = ExtResource("18_4nthg")
 
 [node name="Instructions" type="RichTextLabel" parent="Parallax2D6"]
 offset_right = 3686.0
-offset_bottom = 1006.0
+offset_bottom = 1022.0
 scale = Vector2(0.05, 0.05)
 theme = SubResource("Theme_du7ls")
-text = "Cut all the grass! Press <space> to use your tool."
+text = "Lorem ipsum dolor sit"
 fit_content = true
 scroll_active = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
-script = ExtResource("18_4nthg")
 
+[connection signal="state_changed" from="." to="Bales" method="_on_farm_state_changed"]
 [connection signal="state_changed" from="." to="Farmer" method="_on_farm_state_changed"]
+[connection signal="state_changed" from="." to="Farmer/Bale" method="_on_farm_state_changed"]
 [connection signal="state_changed" from="." to="Farmer/Tools/Scythe" method="_on_farm_state_changed"]
 [connection signal="state_changed" from="." to="Farmer/Tools/Tedder" method="_on_farm_state_changed"]
+[connection signal="state_changed" from="." to="Bounds" method="_on_farm_state_changed"]
+[connection signal="state_changed" from="." to="Parallax2D6" method="_on_farm_state_changed"]
 [connection signal="state_changed" from="." to="Parallax2D6/Instructions" method="_on_farm_state_changed"]
+[connection signal="timeout" from="Grasses/Timer" to="Grasses" method="_on_timer_timeout"]
+[connection signal="timeout" from="Bales/Timer" to="Bales" method="_on_timer_timeout"]
+[connection signal="area_entered" from="Farmer/Area2D" to="Farmer" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Farmer/Area2D" to="Farmer" method="_on_area_2d_area_exited"]

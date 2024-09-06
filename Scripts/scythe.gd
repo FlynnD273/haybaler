@@ -40,5 +40,8 @@ func end_slice() -> void:
   set_hitbox_disabled(true)
 
 func _on_farm_state_changed() -> void:
-  if manager.state == GameManager.GameStates.Ted:
-    hide()
+  match manager.state:
+    GameManager.GameStates.Cut:
+      show()
+    _:
+      hide()

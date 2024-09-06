@@ -10,7 +10,10 @@ enum GameStates {
   Done,
 }
 
-var state: GameStates = GameStates.Cut: set=_set_state
+var state: GameStates = GameStates.Done: set=_set_state
+
+func _ready() -> void:
+  state = GameStates.Cut
 
 signal state_changed
 
